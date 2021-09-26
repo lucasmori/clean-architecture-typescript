@@ -16,8 +16,10 @@
   "author": "Lucas Eduardo Mori <lucastecnew@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@shelf/jest-mongodb": "^2.1.0",
     "@types/bcrypt": "^5.0.0",
     "@types/jest": "^26.0.23",
+    "@types/mongodb": "^4.0.7",
     "@types/node": "^15.14.1",
     "@types/validator": "^13.6.3",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
@@ -42,6 +44,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "mongodb": "^4.1.2",
     "validator": "^13.6.0"
   }
 }
