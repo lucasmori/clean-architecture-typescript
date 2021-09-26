@@ -81,11 +81,10 @@ describe('DbAddAccount UseCase', () => {
       password: 'valid_password'
     }
     await sut.add(accountData)
-    expect(addSpy).toHaveBeenCalledWith({
+    expect(addSpy).toHaveBeenCalledWith(Object.assign({
       name: 'valid_name',
-      email: 'valid_email',
-      password: 'hashed_password'
-    })
+      email: 'valid_email'
+    }, { password: 'hashed_password' }))
   })
 
   test('Should throw if AddAccountRepository throws', async () => {
@@ -110,11 +109,10 @@ describe('DbAddAccount UseCase', () => {
       password: 'valid_password'
     }
     const account = await sut.add(accountData)
-    expect(account).toEqual({
-      id: 'valid_id',
+    expect(account).toEqual(Object.assign({
       name: 'valid_name',
       email: 'valid_email',
       password: 'hashed_password'
-    })
+    }, { id: 'valid_id' }))
   })
 })
